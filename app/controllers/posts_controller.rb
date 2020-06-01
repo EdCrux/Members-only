@@ -7,11 +7,11 @@ before_action :authenticate_user!, except: [:index, :show]
   end
 
   def new
-    @post = current_user.posts.new
+    @post = current_user.posts.build
   end
 
   def create
-    @post = current_user.posts.new(post_params)
+    @post = current_user.posts.build(post_params)
 
     if @post.save
       flash[:notice] = "Post created successfully "
@@ -23,6 +23,6 @@ before_action :authenticate_user!, except: [:index, :show]
 
   private
    def post_params
-    params.require(:post).permit(:description)
+    params.require(:post).permit(:description, :user_id)
    end
 end
