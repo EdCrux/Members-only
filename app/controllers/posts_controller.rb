@@ -3,7 +3,6 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.paginate(page: params[:page], per_page: 5).order('created_at DESC')
-
     @post = current_user.posts.build if user_signed_in?
   end
 

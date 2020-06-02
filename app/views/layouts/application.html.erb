@@ -22,6 +22,7 @@
           <% end %>
           <ul class="right hide-on-med-and-down">
             <% if user_signed_in? %>
+              <%= gravatar_for current_user, size:65 %>
               <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
             <% else %>
               <li><%= link_to "Log in", new_user_session_path %></li>
