@@ -8,7 +8,10 @@
       <div class="card cyan darken-1">
         <div class="card-content white-text">
           <% if user_signed_in? %>
-            <span class="card-title"><%= post.user.username %></span>
+            <span class="card-title">
+              <%= gravatar_for post.user, size:35 %>
+              <%= post.user.username %>
+            </span>
           <% else %>
             <span class="card-title">
               Anonymus
