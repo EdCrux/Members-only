@@ -22,7 +22,8 @@
             <% if user_signed_in? %>
               <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
             <% else %>
-              <li><%= link_to "Sign in", new_user_session_path %>
+              <li><%= link_to "Log in", new_user_session_path %></li>
+              <li><%= link_to "Sign up", new_user_registration_path %></li>
             <% end %>
           </ul>
         </div>
@@ -41,7 +42,7 @@
     </div>
 
     <%= yield %>
-
+    
     <footer class="page-footer grey darken-2">
       <div class="container">
         <div class="row">
