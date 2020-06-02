@@ -13,7 +13,6 @@
  *= require_tree .
  *= require_self
  */
- @import url(https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css);
 
  body {
    position: absolute;
@@ -29,8 +28,9 @@
  }
 
 
-
  .apple_pagination {
+   margin: 0 auto;
+   width: 45%;
   background: #f1f1f1;
   border: 1px solid #e5e5e5;
   text-align: center;
@@ -41,9 +41,10 @@
   .apple_pagination .disabled {
     color: #aaaaaa; }
   .apple_pagination .current {
+    color: white;
     font-style: normal;
     font-weight: bold;
-    background-color: #bebebe;
+    background-color: #00acc1;
     display: inline-block;
     width: 1.4em;
     height: 1.4em;
@@ -54,6 +55,6 @@
     text-shadow: rgba(255, 255, 255, 0.8) 1px 1px 1px; }
   .apple_pagination a {
     text-decoration: none;
-    color: black; }
+    color: #00acc1; }
     .apple_pagination a:hover, .apple_pagination a:focus {
       text-decoration: underline; }
