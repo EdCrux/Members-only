@@ -13,52 +13,60 @@
   </head>
 
   <body>
-    <% if notice || alert %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <% end %>
+
     <div class="navbar-fixed">
-    <nav class="cyan darken-2">
-      <div class="nav-wrapper">
-        <%= link_to "Logo" , root_path, class: 'brand-logo' %>
-        <ul class="right hide-on-med-and-down">
-        <% if user_signed_in? %>
-          <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
-        <% else %>
-          <li><%= link_to "Sign in", new_user_session_path %>
+      <nav class="cyan darken-2">
+        <div class="nav-wrapper">
+          <%= link_to "Logo" , root_path, class: 'brand-logo' %>
+          <ul class="right hide-on-med-and-down">
+            <% if user_signed_in? %>
+              <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+            <% else %>
+              <li><%= link_to "Sign in", new_user_session_path %>
+            <% end %>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <div class="row">
+      <div align="center" class="col s10 offset-s1 m8 offset-m2 l6 offset-l3">
+        <% if notice %>
+          <p class="notice card-panel teal lighten-2 white-text"><%= notice %></p>
         <% end %>
-        </ul>
+        <% if  alert %>
+          <p class="alert card-panel red lighten-2 white-text"><%= alert %></p>
+        <% end %>
       </div>
-    </nav>
-  </div>
-    
+    </div>
+
     <%= yield %>
 
-     <footer class="page-footer grey darken-2">
-          <div class="container">
-            <div class="row">
-              <div class="col l6 s12">
-                <h5 class="white-text">Footer Content</h5>
-                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
-              </div>
-              <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">Links</h5>
-                <ul>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
-                </ul>
-              </div>
-            </div>
+    <footer class="page-footer grey darken-2">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">Footer Content</h5>
+            <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
           </div>
-          <div class="footer-copyright">
-            <div class="container">
-            © 2014 Copyright Text
-            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
-            </div>
+          <div class="col l4 offset-l2 s12">
+            <h5 class="white-text">Links</h5>
+            <ul>
+              <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+              <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+              <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+              <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+            </ul>
           </div>
-        </footer>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+          © 2014 Copyright Text
+          <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+        </div>
+      </div>
+    </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   </body>

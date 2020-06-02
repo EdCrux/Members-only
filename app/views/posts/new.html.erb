@@ -1,10 +1,1 @@
-<%= form_with model: @post do |f| %>
-  <div align="center" class="input-field">
-    <%= f.label :description %><br />
-    <%= f.text_area :description, autofocus: true %>
-  </div>
-
-  <div align="center" class="input-field col s10 offset-s1">
-    <%= f.submit  class: ['waves-effect', 'waves-light', 'btn'] %>
-  </div>
-<% end %>
+<%= render 'form' %>

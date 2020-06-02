@@ -1,7 +1,11 @@
+<% if user_signed_in? %>
+  <%= render 'form' %>
+<% end %>
+
 <% @posts.each do |post| %>
   <div class="row">
     <div class="col s12 m6 offset-m3">
-      <div class="card cyan darken-2">
+      <div class="card cyan darken-1">
         <div class="card-content white-text">
           <% if user_signed_in? %>
             <span class="card-title"><%= post.user.username %></span>
@@ -17,7 +21,9 @@
           <p><%= post.description %></p>
         </div>
         <div class="card-action grey lighten-5">
-          <%= link_to "Who wrote this post?, click here to figure out", new_user_registration_path, class:'cyan-text darken-2' %> 
+          <% unless user_signed_in? %>
+            <%= link_to "Who wrote this post?, click here to figure out", new_user_registration_path, class:'cyan-text darken-2' %>
+          <% end %>
         </div>
       </div>
     </div>

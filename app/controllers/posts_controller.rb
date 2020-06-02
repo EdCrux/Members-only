@@ -3,6 +3,9 @@ before_action :authenticate_user!, except: [:index]
 
   def index
     @posts = Post.all.order('created_at DESC')
+    if user_signed_in?
+      @post = current_user.posts.build
+    end
   end
 
   def new

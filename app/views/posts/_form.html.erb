@@ -1,0 +1,28 @@
+<%= form_with model: @post do |f| %>
+  <div class="row">
+    <div class="field col s10 offset-s1 m8 offset-m2 l6 offset-l3">
+      <br>
+      <%= f.label :description %><br>
+      <div class="row">
+        <div class="input-field col s11">
+          <%= f.text_area :description, autofocus: true, class: 'materialize-textarea' %>
+        </div>
+        <div class="input-field col s1">
+
+          <%= f.button class: ['btn-floating', 'waves-effect', 'waves-light', 'btn-large'] do %>
+            <i class="material-icons">add</i>
+          <% end %>
+
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+  </div>
+
+
+
+<% end %>
