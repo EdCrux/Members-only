@@ -2,7 +2,10 @@ class PostsController < ApplicationController
 before_action :authenticate_user!, except: [:index]
 
   def index
-    @posts = Post.all.order('created_at DESC')
+    @posts = Post.paginate(page: params[:page], per_page: 5)
+    #@posts= Post.page(params[:page]).order('created_at DESC')
+    #@posts = Post.paginate(page: params[:page])
+
     if user_signed_in?
       @post = current_user.posts.build
     end
