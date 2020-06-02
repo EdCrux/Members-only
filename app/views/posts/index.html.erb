@@ -23,6 +23,15 @@
         <div class="card-action grey lighten-5">
           <% unless user_signed_in? %>
             <%= link_to "Who wrote this post?, click here to figure out", new_user_registration_path, class:'cyan-text darken-2' %>
+          <% else %>
+            <small>
+              Created 
+              <%= time_ago_in_words(post.created_at) %> ago  
+            </small>
+            <small>
+              | Last updated
+              <%= time_ago_in_words(post.updated_at) %> ago
+            </small>
           <% end %>
         </div>
       </div>
