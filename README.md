@@ -5,6 +5,7 @@
 [![LinkedIn][linkedin-shield]][linkedin-url]
 [![LinkedIn][linkedin-shield2]][linkedin-url2]
 
+
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
@@ -139,4 +140,3 @@ See the [open issues](https://github.com/EdCrux/Members-only/issues) for a list 
 [linkedin-url2]: https://www.linkedin.com/in/edcrux/
 [product-screenshot]: gitpodscreenshots.png
 [product-example]: mockup.png
-
