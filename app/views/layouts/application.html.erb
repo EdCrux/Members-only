@@ -4,12 +4,65 @@
     <title>MembersOnly</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
   <body>
+
+    <div class="navbar-fixed">
+      <nav class="cyan darken-2">
+        <div class="nav-wrapper">
+          <%= link_to  root_path, class: 'brand-logo valign-wrapper ' do %>
+            <%= image_tag "members-only.png", width: "251" %>
+          <% end %>
+          <ul class="right hide-on-med-and-down">
+            <% if user_signed_in? %>
+              <%= gravatar_for current_user, size:65 %>
+              <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+            <% else %>
+              <li><%= link_to "Log in", new_user_session_path %></li>
+              <li><%= link_to "Sign up", new_user_registration_path %></li>
+            <% end %>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <div class="row">
+      <div align="center" class="col s10 offset-s1 m8 offset-m2 l6 offset-l3">
+        <% if notice %>
+          <p class="notice card-panel teal lighten-2 white-text"><%= notice %></p>
+        <% end %>
+        <% if  alert %>
+          <p class="alert card-panel red lighten-2 white-text"><%= alert %></p>
+        <% end %>
+      </div>
+    </div>
+
     <%= yield %>
+
+    <footer class="page-footer grey darken-2">
+      <div class="container">
+        <div class="row">
+          <div class="col s12">
+            <h5 class="white-text">Members-only</h5>
+            <p class="grey-text text-lighten-4"> Exclusive clubhouse where your members can write embarrassing posts about non-members. Inside the clubhouse, members can see who the author of a post is but, outside, they can only see the story and wonder who wrote it.</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+          © 2020 Copyright by kitpao and edcrux
+          <a class="grey-text text-lighten-4 right" href="#!">With love and Ruby on Rails</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   </body>
 </html>
