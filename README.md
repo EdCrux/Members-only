@@ -27,6 +27,7 @@
 ## Table of Contents
 * [About the Project](#about-the-project)
   * [Built With](#built-with)
+* [Future Feature](#future-feature)
 * [Usage](#usage)
 * [Roadmap](#roadmap)
 * [Contact](#contact)
@@ -57,6 +58,9 @@ The project was developed using the following technologies:
 - [Materialize library](https://materializecss.com/)
 - [DEVISE GEM](https://github.com/heartcombo/devise)
 - [WILL PAGINATE](https://rubygems.org/gems/will_paginate/versions/3.1.0?locale=es)
+
+## Future Feature
+* Dropdown menu
 
 ## Usage
 * Click the image to start using the virtual workspace:
